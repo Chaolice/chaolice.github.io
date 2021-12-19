@@ -118,6 +118,11 @@
     canvas {
       display: none;
     }
+
+    body {
+      cursor: auto;
+
+    }
     .tooSmol {
         display: block;
       }
@@ -149,5 +154,8 @@
 
   h1:hover:before {
   display: none;
+  }
+  h1:hover span {
+    display: block;
   }
 }
