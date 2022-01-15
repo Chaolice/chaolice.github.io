@@ -212,7 +212,9 @@ function mouseClicked(e) {
       if(ford.realR >100 && ford.realR <250) {          //biggest
         Tone.loaded().then(() => {
           sampler.triggerAttackRelease(["D#4"], 4);
-        })      }
+        })
+        ford.brightness = 255;
+      }
       if(ford.realR >60 && ford.realR <100) {
         Tone.loaded().then(() => {
           sampler.triggerAttackRelease(["E#2"], 4);
@@ -230,6 +232,15 @@ function mouseClicked(e) {
         Tone.loaded().then(() => {
           sampler.triggerAttackRelease(["A1"], 4);
         })
+      }
+
+      if (ford.brightness == 255) {
+        activeBubble = true
+          Tone.Transport.start();
+
+      } else {
+        activeBubble = false
+        Tone.Transport.stop();
       }
     }
 
