@@ -34,6 +34,8 @@ let xc
 //colour echo
 let d
 
+let activeBubble
+
 
 function setup() {
   rectMode(CENTER);
@@ -210,10 +212,12 @@ function mouseClicked(e) {
       // console.log(ford.realR, ford.rEcho);
 
       if(ford.realR >100 && ford.realR <250) {          //biggest
-        Tone.loaded().then(() => {
-          sampler.triggerAttackRelease(["D#4"], 4);
-        })
+
         ford.brightness = 255;
+      }
+
+      if(ford.realR >100 && ford.realR <250 && activeBubble==true) {          //biggest
+        ford.brightness = 0;
       }
       if(ford.realR >60 && ford.realR <100) {
         Tone.loaded().then(() => {
@@ -234,10 +238,10 @@ function mouseClicked(e) {
         })
       }
 
+
       if (ford.brightness == 255) {
         activeBubble = true
           Tone.Transport.start();
-
       } else {
         activeBubble = false
         Tone.Transport.stop();
