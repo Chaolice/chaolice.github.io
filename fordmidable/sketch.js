@@ -219,11 +219,14 @@ function mouseClicked(e) {
       if(ford.realR >100 && ford.realR <250 && activeBubble==true) {          //biggest
         ford.brightness = 0;
       }
+
+
       if(ford.realR >60 && ford.realR <100) {
         Tone.loaded().then(() => {
           sampler.triggerAttackRelease(["E#2"], 4);
           sampler.triggerAttackRelease(["E#2"], 4,n+2); ///TATATATA
         })
+        ford.brightness = 255;
       }
       if(ford.realR >40 && ford.realR <60) {
         Tone.loaded().then(() => {
@@ -245,6 +248,10 @@ function mouseClicked(e) {
       } else {
         activeBubble = false
         Tone.Transport.stop();
+      }
+
+      if (activeBubble == false) {
+        ford.brightness = 0;
       }
     }
 

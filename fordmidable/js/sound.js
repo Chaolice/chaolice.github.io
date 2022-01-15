@@ -40,11 +40,18 @@
 
   
 
-const synth = new Tone.Synth().toDestination();
 const seq = new Tone.Sequence((time, note) => {
 	sampler.triggerAttackRelease(note, 0.1, time);
 	// subdivisions are given as subarrays
-}, ["D#4"]).start(0);
+}, ["C4"]).start(0);
+
+
+const loop = new Tone.Loop((time) => {
+	// triggered every eighth note.
+	sampler.triggerAttackRelease(note, 0.1, time);
+	// subdivisions are given as subarrays
+}, ["F#4"]).start(0);
+
   
 
 
