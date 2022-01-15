@@ -13,32 +13,28 @@
 //     release: 0.5,
 //   }).toDestination();
 
-  const sampler = new Tone.Sampler({
-    urls: {
-      "C4": "A1.mp3",
-      "D#4": "B1.mp3",
-      "F#4": "C1.mp3",
-    },
-    release: 1,
-    baseUrl: "assets/",
+  // const sampler = new Tone.Sampler({
+  //   urls: {
+  //     "C4": "A1.mp3",
+  //     "D#4": "B1.mp3",
+  //     "F#4": "C1.mp3",
+  //   },
+  //   release: 1,
+  //   baseUrl: "assets/",
     
-  }).toDestination();
+  // }).toDestination();
 
 
 
   
 
-//   Tone.Transport.scheduleRepeat((time) => {
-//     // use the callback time to schedule events
-//     osc.start(time).stop(time + 0.1);
-//   }, "4n");
-//   // transport must be started before it starts invoking events
-// const seq = new Tone.Sequence((time, note) => {
-// 	sampler.triggerAttackRelease(note, 0.1, time);
-// 	// subdivisions are given as subarrays
-// }, ["D#4"]).start();
-
-  
+  //a player with an envelope
+let sampler = new Tone.Sampler({
+  "C4": "assets/A1.mp3",
+    "D#4": "assets/B1.mp3",
+      "F#4": "assets/C1.mp3",
+});
+sampler.toMaster();
 
 const seq = new Tone.Sequence((time, note) => {
 	sampler.triggerAttackRelease(note, 0.1, time);
@@ -46,11 +42,14 @@ const seq = new Tone.Sequence((time, note) => {
 }, ["C4"]).start(0);
 
 
-const loop = new Tone.Loop((time) => {
-	// triggered every eighth note.
-	sampler.triggerAttackRelease(note, 0.1, time);
-	// subdivisions are given as subarrays
-}, ["F#4"]).start(0);
+// const loop = new Tone.Loop((time) => {
+// 	// triggered every eighth note.
+// 	sampler.triggerAttackRelease(note, 0.1, time);
+// 	// subdivisions are given as subarrays
+// }, ["F#4"]).start(0);
+
+
+
 
   
 

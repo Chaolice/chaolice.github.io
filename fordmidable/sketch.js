@@ -228,6 +228,13 @@ function mouseClicked(e) {
         })
         ford.brightness = 255;
       }
+
+      if(ford.realR >60 && ford.realR <100&& activeBubble==true) {          //biggest
+        ford.brightness = 0;
+      }
+
+
+
       if(ford.realR >40 && ford.realR <60) {
         Tone.loaded().then(() => {
           sampler.triggerAttackRelease(["C4"], 4);
@@ -326,4 +333,8 @@ function mouseReleased() {
   horizontalLocked = false;
   verticalLocked = false;
   
+}
+
+function keyPressed() {
+  sampler.triggerAttack("A1");
 }
