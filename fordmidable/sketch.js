@@ -36,6 +36,8 @@ let d
 
 let activeBubble
 
+// sound
+
 
 function setup() {
   rectMode(CENTER);
@@ -337,4 +339,5 @@ function mouseReleased() {
 
 function keyPressed() {
   sampler.triggerAttack("A1");
+  sampler.loop();
 }
