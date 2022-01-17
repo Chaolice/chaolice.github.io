@@ -216,7 +216,7 @@ function mouseClicked(e) {
       }
 
 
-      if (ford.realR > 100 && ford.realR < 250) { //biggest
+      if (ford.realR > 100 && ford.realR < 350) { //biggest
         // Tone.loaded().then(() => {
         //   sampler.triggerAttackRelease(["E#2"], 4);
         //   sampler.triggerAttackRelease(["E#2"], 4,n+2); ///TATATATA
@@ -233,7 +233,7 @@ function mouseClicked(e) {
         ford.brightness = 255;
       }
 
-      if (ford.realR > 100 && ford.realR < 250 && activeBubble == true) { //biggest
+      if (ford.realR > 100 && ford.realR < 350 && activeBubble == true) { //biggest
         ford.brightness = 0;
       }
 
