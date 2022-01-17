@@ -210,9 +210,22 @@ function mouseClicked(e) {
 
 
 
-      if (ford.realR > 250) { //biggest
+      if (ford.realR > 350) { //biggest
 
-        C1.play();
+        if (!sampleIsLooping) {
+          C3.loop();
+          C3.speed(2)
+          sampleIsLooping = true;
+        } else {
+          C3.stop();
+          sampleIsLooping = false;
+        }
+
+        ford.brightness = 255;
+      }
+
+      if (ford.realR > 350 && activeBubble == true) {
+        ford.brightness = 0;
       }
 
 
