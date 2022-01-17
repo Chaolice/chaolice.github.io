@@ -8,7 +8,7 @@ let horizontalCursor, verticalCursor;
 
 //both handles
 let widthHandle = 25;
-let heightHandle = 25;
+let heightHandle = 8;
 
 //horizontal handle
 let horizontalx;
@@ -50,6 +50,8 @@ let A3;
 let B3;
 let C3;
 let sampleIsLooping = false;
+
+//
 
 
 function setup() {
@@ -94,8 +96,8 @@ function draw() {
     window.innerHeight-75,
     window.innerWidth,
     1,
-    heightHandle,
-    widthHandle
+    widthHandle,
+    heightHandle
   );
   verticalCursor.drawVertical(verticalx, verticaly);
 
@@ -227,13 +229,23 @@ function mouseClicked(e) {
 
 
 
+      if(ford.realR >250) {          //biggest
+
+          C1.play();
+        }
+
+
       if(ford.realR >100 && ford.realR <250) {          //biggest
+        // Tone.loaded().then(() => {
+        //   sampler.triggerAttackRelease(["E#2"], 4);
+        //   sampler.triggerAttackRelease(["E#2"], 4,n+2); ///TATATATA
+        // })
         if (!sampleIsLooping) {
-          A2.loop();
-          A2.speed(2)
+          A1.loop();
+          A1.speed(2)
           sampleIsLooping = true;
         } else {
-          A2.stop();
+          A1.stop();
           sampleIsLooping = false;
         }
 
@@ -247,11 +259,11 @@ function mouseClicked(e) {
 
       if(ford.realR >60 && ford.realR <100) {
         if (!sampleIsLooping) {
-          A1.loop();
-          A1.speed(2)
+          A2.loop();
+          A2.speed(2)
           sampleIsLooping = true;
         } else {
-          A1.stop();
+          A2.stop();
           sampleIsLooping = false;
         }
 
@@ -314,9 +326,9 @@ function mouseClicked(e) {
 
         ford.brightness = 255;
       }
-      if(ford.realR <10) {
+      if(ford.realR <1) {
         Tone.loaded().then(() => {
-          sampler.triggerAttackRelease(["A5"], 4);
+          sampler.triggerAttackRelease(["A1"], 4);
         })
       }
 
@@ -335,18 +347,18 @@ function mouseClicked(e) {
     }
 
 
-      if(ford.realR >100 && ford.realR <250 && mouseButton === RIGHT) {         //biggest
-        if (!sampleIsLooping) {
-          C3.loop();
-          C3.speed(2)
-          sampleIsLooping = true;
-        } else {
-          C3.stop();
-          sampleIsLooping = false;
-        }
+      // if(ford.realR >100 && ford.realR <250) {         //biggest
+      //   if (!sampleIsLooping) {
+      //     C3.loop();
+      //     C3.speed(2)
+      //     sampleIsLooping = true;
+      //   } else {
+      //     C3.stop();
+      //     sampleIsLooping = false;
+      //   }
 
-        ford.brightness = 255;
-      }
+      //   ford.brightness = 255;
+      // }
     
 
 
@@ -557,6 +569,61 @@ function mouseReleased() {
 }
 
 function keyPressed() {
+// 1st circle
+  if (key == "a")
   sampler.triggerAttack("A1");
-  sampler.loop();
+
+  if (key == "w")
+  sampler.triggerAttack("A1");
+
+  if (key == "e")
+  sampler.triggerAttack("A1");
+
+  if (key == "d")
+  sampler.triggerAttack("A1");
+
+  if (key == "x")
+  sampler.triggerAttack("A1");
+
+  if (key == "y")
+  sampler.triggerAttack("A1");
+
+// 2nd circle
+
+  if (key == "t")
+  sampler.triggerAttack("A1");
+
+  if (key == "z")
+  sampler.triggerAttack("A1");
+
+  if (key == "h")
+  sampler.triggerAttack("A1");
+
+  if (key == "b")
+  sampler.triggerAttack("A1");
+
+  if (key == "v")
+  sampler.triggerAttack("A1");
+  if (key == "f")
+  sampler.triggerAttack("A1");
+
+  // 3rd circle
+
+  if (key == "i")
+  sampler.triggerAttack("A1");
+
+  if (key == "o")
+  sampler.triggerAttack("A1");
+
+  if (key == "l")
+  sampler.triggerAttack("A1");
+
+  if (key == "b")
+  sampler.triggerAttack("A1");
+
+  if (key == ",")
+  sampler.triggerAttack("A1");
+  if (key == "j")
+
+  sampler.triggerAttack("A1");
 }
