@@ -37,9 +37,16 @@ let d
 let activeBubble
 
 // sound
+let A1;
+let B1;
+let sampleIsLooping = false;
 
 
 function setup() {
+  A1 = createAudio('assets/A1.mp3');
+  B1 = createAudio('assets/B1.MP3');
+
+
   rectMode(CENTER);
   horizontalx = widthHandle*1.5;
   horizontaly = 75;
@@ -180,6 +187,7 @@ function generateFordCircles(n) {
 //   //   if (d < this.r) {
 
 function mouseClicked(e) {
+
   fordCircles.forEach((ford, index) => {
     // console.log(ford);
     //translate(width / 2, (height * 3) / 4);
@@ -214,6 +222,17 @@ function mouseClicked(e) {
       // console.log(ford.realR, ford.rEcho);
 
       if(ford.realR >100 && ford.realR <250) {          //biggest
+        if (!sampleIsLooping) {
+          //loop our sound element until we
+          //call ele.stop() on it.
+          A1.loop();
+          A1.speed(2)
+      
+          sampleIsLooping = true;
+        } else {
+          A1.stop();
+          sampleIsLooping = false;
+        }
 
         ford.brightness = 255;
       }
@@ -224,15 +243,25 @@ function mouseClicked(e) {
 
 
       if(ford.realR >60 && ford.realR <100) {
-        Tone.loaded().then(() => {
-          sampler.triggerAttackRelease(["E#2"], 4);
-          sampler.triggerAttackRelease(["E#2"], 4,n+2); ///TATATATA
-        })
-        ford.brightness = 255;
+        // Tone.loaded().then(() => {
+        //   sampler.triggerAttackRelease(["E#2"], 4);
+        //   sampler.triggerAttackRelease(["E#2"], 4,n+2); ///TATATATA
+        // })
+
+        if (!sampleIsLooping) {
+
+        B1.loop();
+        B1.speed(2)
+
+      
+        sampleIsLooping = true;
+      } else {
+        B1.stop();
+        sampleIsLooping = false;
+      }
       }
 
       if(ford.realR >60 && ford.realR <100&& activeBubble==true) {          //biggest
-        ford.brightness = 0;
       }
 
 
@@ -253,7 +282,7 @@ function mouseClicked(e) {
 
       if (ford.brightness == 255) {
         activeBubble = true
-          Tone.Transport.start();
+ 
       } else {
         activeBubble = false
         Tone.Transport.stop();
