@@ -49,6 +49,7 @@ let C2;
 // let A3;
 let B3;
 let C3;
+let C4;
 let sampleIsLooping = false;
 
 //
@@ -64,6 +65,7 @@ function setup() {
   C1 = createAudio('assets/C1.MP3');
   C2 = createAudio('assets/C2.MP3');
   C3 = createAudio('assets/C3.MP3');
+  C4 = createAudio('assets/C4.MP3');
 
 
   rectMode(CENTER);
@@ -217,8 +219,8 @@ function mouseClicked(e) {
         //   sampler.triggerAttackRelease(["E#2"], 4,n+2); ///TATATATA
         // })
         if (!sampleIsLooping) {
-          A1.loop();
-          A1.speed(2)
+          A2.loop();
+          A2.speed(2)
           sampleIsLooping = true;
         } else {
           A1.stop();
@@ -235,11 +237,11 @@ function mouseClicked(e) {
 
       if (ford.realR > 60 && ford.realR < 100) {
         if (!sampleIsLooping) {
-          A2.loop();
-          A2.speed(2)
+          C4.loop();
+          C4.speed(2)
           sampleIsLooping = true;
         } else {
-          A2.stop();
+          C4.stop();
           sampleIsLooping = false;
         }
 
@@ -302,11 +304,15 @@ function mouseClicked(e) {
 
         ford.brightness = 255;
       }
-      if (ford.realR < 1) {
-        Tone.loaded().then(() => {
-          sampler.triggerAttackRelease(["A1"], 4);
-        })
+
+      if(ford.realR > 10 && ford.realR < 20 && activeBubble == true) {
+        ford.brightness = 0;
       }
+      // if (ford.realR > 1) {
+      //   Tone.loaded().then(() => {
+      //     sampler.triggerAttackRelease(["A1"], 4);
+      //   })
+      // }
 
 
       if (ford.brightness == 255) {

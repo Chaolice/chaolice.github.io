@@ -39,6 +39,7 @@ let sampler = new Tone.Sampler({
   "C1": "assets/C1.mp3",
   "C2": "assets/C2.mp3",
   "C3": "assets/C3.mp3",
+  "C4": "assets/C4.mp3",
 
   "D6":"assets/keyA.MP3",
   "D1":"assets/keyW.MP3",
