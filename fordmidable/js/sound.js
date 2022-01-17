@@ -32,7 +32,7 @@
 let sampler = new Tone.Sampler({
   "A1": "assets/A1.mp3",
   "A2": "assets/A2.mp3",
-  // "A3": "assets/A3.mp3",
+  "A3": "assets/A3.mp3",
   "B2": "assets/B2.mp3",
   "B3": "assets/B3.mp3",
   "B1": "assets/B1.mp3",

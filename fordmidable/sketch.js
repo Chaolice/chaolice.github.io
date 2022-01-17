@@ -442,7 +442,7 @@ function keyPressed() {
 
   // 3rd circle
 
-  if (key == "i")
+  if (key == "j")
     sampler.triggerAttack("F6");
 
   if (key == "i")
@@ -456,7 +456,7 @@ function keyPressed() {
 
   if (key == ",")
     sampler.triggerAttack("F4");
-    
+
   if (key == "m")
     sampler.triggerAttack("F5");
 }
