@@ -226,7 +226,7 @@ function mouseClicked(e) {
           A2.speed(2)
           sampleIsLooping = true;
         } else {
-          A1.stop();
+          A2.stop();
           sampleIsLooping = false;
         }
 
