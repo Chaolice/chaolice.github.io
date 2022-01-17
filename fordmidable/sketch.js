@@ -56,6 +56,7 @@ let sampleIsLooping = false;
 
 
 function setup() {
+  noCursor();
   A1 = createAudio('assets/A1.mp3');
   A2 = createAudio('assets/A2.mp3');
   // A3 = createAudio('assets/A3.mp3');
@@ -151,6 +152,8 @@ function draw() {
   } else {
     overVerticalHandle = false;
   }
+
+  ellipse(mouseX, mouseY, 20)
 }
 
 /**
