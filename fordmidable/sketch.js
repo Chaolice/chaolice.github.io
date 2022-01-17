@@ -1,3 +1,6 @@
+document.oncontextmenu = function() {
+  return false;
+}
 let fordCircles = [];
 let handleNumber, handleSize;
 
@@ -197,6 +200,7 @@ function mouseClicked(e) {
       ford.realX + width / 2,
       ford.realY + (height * 3) / 4
     );
+  
 
     if (d < ford.realR) {
       console.log("clicked on circle");
@@ -268,14 +272,24 @@ function mouseClicked(e) {
 
       if(ford.realR >40 && ford.realR <60) {
         Tone.loaded().then(() => {
-          sampler.triggerAttackRelease(["C4"], 4);
-          sampler.triggerAttackRelease(["C4"], 4, n+5);
+          sampler.triggerAttackRelease(["A2"], 4);
 
         })
       }
-      if(ford.realR <40) {
+      if(ford.realR >20 && ford.realR <40) {
         Tone.loaded().then(() => {
-          sampler.triggerAttackRelease(["A1"], 4);
+          sampler.triggerAttackRelease(["A3"], 4);
+        })
+      }
+
+      if(ford.realR >10 && ford.realR <20) {
+        Tone.loaded().then(() => {
+          sampler.triggerAttackRelease(["A4"], 4);
+        })
+      }
+      if(ford.realR <10) {
+        Tone.loaded().then(() => {
+          sampler.triggerAttackRelease(["A5"], 4);
         })
       }
 
@@ -294,6 +308,14 @@ function mouseClicked(e) {
     }
 
 
+      if(ford.realR >100 && ford.realR <250 && mouseButton === RIGHT) {         //biggest
+        Tone.loaded().then(() => {
+          sampler.triggerAttackRelease(["A4"], 4);
+        })
+      }
+    
+
+
 
 
   });
@@ -307,11 +329,145 @@ function mousePressed() {
   horizontalCursor.clicked();
   verticalCursor.clicked();
 
+
 }
 
-// function mousePressed(){
-//   fordCircle.click()
-// }
+// function mousePressed(e) {
+//   fordCircles.forEach((ford, index) => {
+//     // console.log(ford);
+//     //translate(width / 2, (height * 3) / 4);
+//     let d = dist(
+//       e.x,
+//       e.y,
+//       ford.realX + width / 2,
+//       ford.realY + (height * 3) / 4
+//     );
+//     if (d < ford.realR) {
+//       console.log("clicked on circle");
+//       let n = Tone.now(); //delay
+//       ford.rEcho =0;
+//       // ford.brightness = 255;
+//       // fill(255,0,0)
+//       ford.echoIsActivated = true;
+
+//       // if (mouseIsPressed) {
+//       //   this.brightness=255;
+//       //   hue += 0.1;
+//       //   if (hue > 255) hue = 0;
+//       //   ford.brightness = 1+frameCount;
+//       // }
+//       // if (d < ford.realR) {
+//       //   hue += 0.1;
+//       //   if (hue > 255) hue = 0;
+//       //   ford.brightness = 1+frameCount;
+//       // }
+
+//       // console.log(ford.rEcho);
+//       // console.log(ford.realR, ford.rEcho);
+
+//       if(ford.realR >100 && ford.realR <250 && ) {          //biggest
+//         if (!sampleIsLooping) {
+//           //loop our sound element until we
+//           //call ele.stop() on it.
+//           A1.loop();
+//           A1.speed(2)
+      
+//           sampleIsLooping = true;
+//         } else {
+//           A1.stop();
+//           sampleIsLooping = false;
+//         }
+
+//         ford.brightness = 255;
+//       }
+
+//       if(ford.realR >100 && ford.realR <250 && activeBubble==true) {          //biggest
+//         ford.brightness = 0;
+//       }
+
+
+//       if(ford.realR >60 && ford.realR <100) {
+//         // Tone.loaded().then(() => {
+//         //   sampler.triggerAttackRelease(["E#2"], 4);
+//         //   sampler.triggerAttackRelease(["E#2"], 4,n+2); ///TATATATA
+//         // })
+
+//         if (!sampleIsLooping) {
+
+//         B1.loop();
+//         B1.speed(2)
+
+      
+//         sampleIsLooping = true;
+//       } else {
+//         B1.stop();
+//         sampleIsLooping = false;
+//       }
+//       }
+
+//       if(ford.realR >60 && ford.realR <100&& activeBubble==true) {          //biggest
+//       }
+
+
+
+//       if(ford.realR >40 && ford.realR <60&& mouseButton === LEFT) {
+//         Tone.loaded().then(() => {
+//           sampler.triggerAttackRelease(["A2"], 4);
+
+//         })
+//       }
+//       if(ford.realR >20 && ford.realR <40) {
+//         Tone.loaded().then(() => {
+//           sampler.triggerAttackRelease(["A3"], 4);
+//         })
+//       }
+
+//       if(ford.realR >10 && ford.realR <20) {
+//         Tone.loaded().then(() => {
+//           sampler.triggerAttackRelease(["A4"], 4);
+//         })
+//       }
+//       if(ford.realR <10) {
+//         Tone.loaded().then(() => {
+//           sampler.triggerAttackRelease(["A5"], 4);
+//         })
+//       }
+
+
+//       if (ford.brightness == 255) {
+//         activeBubble = true
+ 
+//       } else {
+//         activeBubble = false
+//         Tone.Transport.stop();
+//       }
+
+//       if (activeBubble == false) {
+//         ford.brightness = 0;
+//       }
+//     }
+
+
+//       if(ford.realR >100 && ford.realR <250) {     if (mouseButton === RIGHT) {         //biggest
+//         Tone.loaded().then(() => {
+//           sampler.triggerAttackRelease(["A4"], 4);
+//         })
+//       }
+//     }
+
+
+
+
+//   });
+//     }
+    
+
+
+
+
+function mousePressed(){
+  fordCircle.click()
+}
 
 function mousePressed() {
   if (overHorizontalHandle) {
