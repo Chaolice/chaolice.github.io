@@ -53,7 +53,7 @@ let sampler = new Tone.Sampler({
   "E3":"assets/keyH.MP3",
   "E4":"assets/keyB.MP3",
   "E5":"assets/keyV.MP3",
-  
+
   "F6":"assets/keyJ.MP3",
   "F1":"assets/keyI.MP3",
   "F2":"assets/keyO.MP3",
@@ -61,7 +61,7 @@ let sampler = new Tone.Sampler({
   "F4":"assets/keyComma.MP3",
   "F5":"assets/keyM.MP3",
 });
-sampler.toMaster();
+sampler.toDestination();
 
 const seq = new Tone.Sequence((time, note) => {
 	sampler.triggerAttackRelease(note, 0.1, time);
