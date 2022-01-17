@@ -1,4 +1,4 @@
-document.oncontextmenu = function() {
+document.oncontextmenu = function () {
   return false;
 }
 let fordCircles = [];
@@ -46,7 +46,7 @@ let C1;
 let A2;
 let B2;
 let C2;
-let A3;
+// let A3;
 let B3;
 let C3;
 let sampleIsLooping = false;
@@ -57,7 +57,7 @@ let sampleIsLooping = false;
 function setup() {
   A1 = createAudio('assets/A1.mp3');
   A2 = createAudio('assets/A2.mp3');
-  A3 = createAudio('assets/A3.mp3');
+  // A3 = createAudio('assets/A3.mp3');
   B1 = createAudio('assets/B1.MP3');
   B2 = createAudio('assets/B2.MP3');
   B3 = createAudio('assets/B3.MP3');
@@ -67,16 +67,16 @@ function setup() {
 
 
   rectMode(CENTER);
-  horizontalx = widthHandle*1.5;
+  horizontalx = widthHandle * 1.5;
   horizontaly = 75;
   verticalx = horizontalx;
-  verticaly = window.innerHeight-75;
-  leftWall = widthHandle*1.5;
-  rightWall = window.innerWidth-widthHandle*1.5;
+  verticaly = window.innerHeight - 75;
+  leftWall = widthHandle * 1.5;
+  rightWall = window.innerWidth - widthHandle * 1.5;
   rectMode(RADIUS);
   createCanvas(window.innerWidth, window.innerHeight);
   generateFordCircles(3);
-  
+
 }
 
 function draw() {
@@ -93,7 +93,7 @@ function draw() {
   );
   verticalCursor = new Handle(
     0,
-    window.innerHeight-75,
+    window.innerHeight - 75,
     window.innerWidth,
     1,
     widthHandle,
@@ -111,18 +111,13 @@ function draw() {
         0,
         height,
         height * 2,
-        height * 10  
+        height * 10
       );
       ford.updateZoomLevel(valY); //activate the zoom level with the mouseXlevel
       //afficher les cercles
       ford.draw();
     }
   });
-  // if (ford.updateZoomLevel) {
-  //   Tone.loaded().then(() => {
-  //     sampler.triggerAttackRelease(["E#2"], 4);
-  //   })
-  // }
   pop();
   horizontalCursor.drawHorizontal(horizontalx, horizontaly);
 
@@ -185,25 +180,6 @@ function generateFordCircles(n) {
   // console.log(this.r, index);
 }
 
-// function mouseClicked(ford,index){
-//   ford=n;
-//   index=0;
-//   // console.log("click", e.x,e.y);
-
-//   // //check sur quel circle tu es
-//   fordCircles.forEach((ford, index) => {
-//     let d = dist(mouseX,mouseX,this.y,this.y);
-//     if (d<this.r) {
-//       this.brightness = 255;
-//       console.log('clicked on circle');
-//     }
-//     console.log('not clicked on circle');
-//     } // si tu es à l'intérieur de 1 des cercles, tu output son index
-
-// }
-
-// let d = dist(px, py, this.x, this.y);
-//   //   if (d < this.r) {
 
 function mouseClicked(e) {
 
@@ -216,12 +192,12 @@ function mouseClicked(e) {
       ford.realX + width / 2,
       ford.realY + (height * 3) / 4
     );
-  
+
 
     if (d < ford.realR) {
       console.log("clicked on circle");
       let n = Tone.now(); //delay
-      ford.rEcho =0;
+      ford.rEcho = 0;
       // ford.brightness = 255;
       // fill(255,0,0)
       ford.echoIsActivated = true;
@@ -229,13 +205,13 @@ function mouseClicked(e) {
 
 
 
-      if(ford.realR >250) {          //biggest
+      if (ford.realR > 250) { //biggest
 
-          C1.play();
-        }
+        C1.play();
+      }
 
 
-      if(ford.realR >100 && ford.realR <250) {          //biggest
+      if (ford.realR > 100 && ford.realR < 250) { //biggest
         // Tone.loaded().then(() => {
         //   sampler.triggerAttackRelease(["E#2"], 4);
         //   sampler.triggerAttackRelease(["E#2"], 4,n+2); ///TATATATA
@@ -252,12 +228,12 @@ function mouseClicked(e) {
         ford.brightness = 255;
       }
 
-      if(ford.realR >100 && ford.realR <250 && activeBubble==true) {          //biggest
+      if (ford.realR > 100 && ford.realR < 250 && activeBubble == true) { //biggest
         ford.brightness = 0;
       }
 
 
-      if(ford.realR >60 && ford.realR <100) {
+      if (ford.realR > 60 && ford.realR < 100) {
         if (!sampleIsLooping) {
           A2.loop();
           A2.speed(2)
@@ -270,13 +246,13 @@ function mouseClicked(e) {
         ford.brightness = 255;
       }
 
-      if(ford.realR >60 && ford.realR <100&& activeBubble==true) {          //biggest
+      if (ford.realR > 60 && ford.realR < 100 && activeBubble == true) { //biggest
         ford.brightness = 0;
       }
 
 
 
-      if(ford.realR >40 && ford.realR <60) {
+      if (ford.realR > 40 && ford.realR < 60) {
         if (!sampleIsLooping) {
           B2.loop();
           B2.speed(2)
@@ -287,34 +263,34 @@ function mouseClicked(e) {
         }
 
         ford.brightness = 255;
-      } 
+      }
 
-      if(ford.realR >40 && ford.realR <60&& activeBubble==true) {          //biggest
+      if (ford.realR > 40 && ford.realR < 60 && activeBubble == true) { //biggest
         ford.brightness = 0;
       }
 
 
-      if(ford.realR >20 && ford.realR <40) {
+      if (ford.realR > 20 && ford.realR < 40) {
         ford.brightness = 255;
 
         if (!sampleIsLooping) {
 
-        B3.loop();
-        B3.speed(2)
+          B3.loop();
+          B3.speed(2)
 
-      
-        sampleIsLooping = true;
-      } else {
-        B3.stop();
-        sampleIsLooping = false;
-      }
+
+          sampleIsLooping = true;
+        } else {
+          B3.stop();
+          sampleIsLooping = false;
+        }
       }
 
-      if(ford.realR >20 && ford.realR <40 && activeBubble==true) {          //biggest
+      if (ford.realR > 20 && ford.realR < 40 && activeBubble == true) { //biggest
         ford.brightness = 0;
       }
 
-      if(ford.realR >10 && ford.realR <20) {
+      if (ford.realR > 10 && ford.realR < 20) {
         if (!sampleIsLooping) {
           C2.loop();
           C2.speed(2)
@@ -326,7 +302,7 @@ function mouseClicked(e) {
 
         ford.brightness = 255;
       }
-      if(ford.realR <1) {
+      if (ford.realR < 1) {
         Tone.loaded().then(() => {
           sampler.triggerAttackRelease(["A1"], 4);
         })
@@ -335,7 +311,7 @@ function mouseClicked(e) {
 
       if (ford.brightness == 255) {
         activeBubble = true
- 
+
       } else {
         activeBubble = false
         Tone.Transport.stop();
@@ -346,20 +322,6 @@ function mouseClicked(e) {
       }
     }
 
-
-      // if(ford.realR >100 && ford.realR <250) {         //biggest
-      //   if (!sampleIsLooping) {
-      //     C3.loop();
-      //     C3.speed(2)
-      //     sampleIsLooping = true;
-      //   } else {
-      //     C3.stop();
-      //     sampleIsLooping = false;
-      //   }
-
-      //   ford.brightness = 255;
-      // }
-    
 
 
 
@@ -378,140 +340,8 @@ function mousePressed() {
 
 }
 
-// function mousePressed(e) {
-//   fordCircles.forEach((ford, index) => {
-//     // console.log(ford);
-//     //translate(width / 2, (height * 3) / 4);
-//     let d = dist(
-//       e.x,
-//       e.y,
-//       ford.realX + width / 2,
-//       ford.realY + (height * 3) / 4
-//     );
-//     if (d < ford.realR) {
-//       console.log("clicked on circle");
-//       let n = Tone.now(); //delay
-//       ford.rEcho =0;
-//       // ford.brightness = 255;
-//       // fill(255,0,0)
-//       ford.echoIsActivated = true;
 
-//       // if (mouseIsPressed) {
-//       //   this.brightness=255;
-//       //   hue += 0.1;
-//       //   if (hue > 255) hue = 0;
-//       //   ford.brightness = 1+frameCount;
-//       // }
-//       // if (d < ford.realR) {
-//       //   hue += 0.1;
-//       //   if (hue > 255) hue = 0;
-//       //   ford.brightness = 1+frameCount;
-//       // }
-
-//       // console.log(ford.rEcho);
-//       // console.log(ford.realR, ford.rEcho);
-
-//       if(ford.realR >100 && ford.realR <250 && ) {          //biggest
-//         if (!sampleIsLooping) {
-//           //loop our sound element until we
-//           //call ele.stop() on it.
-//           A1.loop();
-//           A1.speed(2)
-      
-//           sampleIsLooping = true;
-//         } else {
-//           A1.stop();
-//           sampleIsLooping = false;
-//         }
-
-//         ford.brightness = 255;
-//       }
-
-//       if(ford.realR >100 && ford.realR <250 && activeBubble==true) {          //biggest
-//         ford.brightness = 0;
-//       }
-
-
-//       if(ford.realR >60 && ford.realR <100) {
-//         // Tone.loaded().then(() => {
-//         //   sampler.triggerAttackRelease(["E#2"], 4);
-//         //   sampler.triggerAttackRelease(["E#2"], 4,n+2); ///TATATATA
-//         // })
-
-//         if (!sampleIsLooping) {
-
-//         B1.loop();
-//         B1.speed(2)
-
-      
-//         sampleIsLooping = true;
-//       } else {
-//         B1.stop();
-//         sampleIsLooping = false;
-//       }
-//       }
-
-//       if(ford.realR >60 && ford.realR <100&& activeBubble==true) {          //biggest
-//       }
-
-
-
-//       if(ford.realR >40 && ford.realR <60&& mouseButton === LEFT) {
-//         Tone.loaded().then(() => {
-//           sampler.triggerAttackRelease(["A2"], 4);
-
-//         })
-//       }
-//       if(ford.realR >20 && ford.realR <40) {
-//         Tone.loaded().then(() => {
-//           sampler.triggerAttackRelease(["A3"], 4);
-//         })
-//       }
-
-//       if(ford.realR >10 && ford.realR <20) {
-//         Tone.loaded().then(() => {
-//           sampler.triggerAttackRelease(["A4"], 4);
-//         })
-//       }
-//       if(ford.realR <10) {
-//         Tone.loaded().then(() => {
-//           sampler.triggerAttackRelease(["A5"], 4);
-//         })
-//       }
-
-
-//       if (ford.brightness == 255) {
-//         activeBubble = true
- 
-//       } else {
-//         activeBubble = false
-//         Tone.Transport.stop();
-//       }
-
-//       if (activeBubble == false) {
-//         ford.brightness = 0;
-//       }
-//     }
-
-
-//       if(ford.realR >100 && ford.realR <250) {     if (mouseButton === RIGHT) {         //biggest
-//         Tone.loaded().then(() => {
-//           sampler.triggerAttackRelease(["A4"], 4);
-//         })
-//       }
-//     }
-
-
-
-
-//   });
-//     }
-    
-
-
-
-
-function mousePressed(){
+function mousePressed() {
   fordCircle.click()
 }
 
@@ -532,7 +362,7 @@ function mousePressed() {
     verticalLocked = false;
   }
   verticalyOffset = xc - verticaly;
-  
+
 }
 
 function mouseDragged() {
@@ -565,65 +395,68 @@ function mouseDragged() {
 function mouseReleased() {
   horizontalLocked = false;
   verticalLocked = false;
-  
+
 }
 
 function keyPressed() {
-// 1st circle
+  // 1st circle
+
   if (key == "a")
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("D6");
 
   if (key == "w")
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("D1");
 
   if (key == "e")
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("D2");
 
   if (key == "d")
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("D3");
 
   if (key == "x")
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("D4");
 
   if (key == "y")
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("D5");
 
-// 2nd circle
+  // 2nd circle
+
+  if (key == "f")
+    sampler.triggerAttack("E6");
 
   if (key == "t")
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("E5");
 
   if (key == "z")
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("E4");
 
   if (key == "h")
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("E3");
 
   if (key == "b")
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("E2");
 
   if (key == "v")
-  sampler.triggerAttack("A1");
-  if (key == "f")
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("E1");
+
 
   // 3rd circle
 
   if (key == "i")
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("F6");
+
+  if (key == "i")
+    sampler.triggerAttack("F1");
 
   if (key == "o")
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("F2");
 
   if (key == "l")
-  sampler.triggerAttack("A1");
-
-  if (key == "b")
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("F3");
 
   if (key == ",")
-  sampler.triggerAttack("A1");
-  if (key == "j")
-
-  sampler.triggerAttack("A1");
+    sampler.triggerAttack("F4");
+    
+  if (key == "m")
+    sampler.triggerAttack("F5");
 }

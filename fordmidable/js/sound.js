@@ -32,13 +32,34 @@
 let sampler = new Tone.Sampler({
   "A1": "assets/A1.mp3",
   "A2": "assets/A2.mp3",
-  "A3": "assets/A3.mp3",
+  // "A3": "assets/A3.mp3",
   "B2": "assets/B2.mp3",
   "B3": "assets/B3.mp3",
   "B1": "assets/B1.mp3",
   "C1": "assets/C1.mp3",
   "C2": "assets/C2.mp3",
   "C3": "assets/C3.mp3",
+
+  "D6":"assets/keyA.MP3",
+  "D1":"assets/keyW.MP3",
+  "D2":"assets/keyE.MP3",
+  "D3":"assets/keyD.MP3",
+  "D4":"assets/keyX.MP3",
+  "D5":"assets/keyY.MP3",
+
+  "E6":"assets/keyF.MP3",
+  "E1":"assets/keyT.MP3",
+  "E2":"assets/keyZ.MP3",
+  "E3":"assets/keyH.MP3",
+  "E4":"assets/keyB.MP3",
+  "E5":"assets/keyV.MP3",
+  
+  "F6":"assets/keyJ.MP3",
+  "F1":"assets/keyI.MP3",
+  "F2":"assets/keyO.MP3",
+  "F3":"assets/keyL.MP3",
+  "F4":"assets/keyComma.MP3",
+  "F5":"assets/keyM.MP3",
 });
 sampler.toMaster();
 
