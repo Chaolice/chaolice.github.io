@@ -42,12 +42,26 @@ let activeBubble
 // sound
 let A1;
 let B1;
+let C1;
+let A2;
+let B2;
+let C2;
+let A3;
+let B3;
+let C3;
 let sampleIsLooping = false;
 
 
 function setup() {
   A1 = createAudio('assets/A1.mp3');
+  A2 = createAudio('assets/A2.mp3');
+  A3 = createAudio('assets/A3.mp3');
   B1 = createAudio('assets/B1.MP3');
+  B2 = createAudio('assets/B2.MP3');
+  B3 = createAudio('assets/B3.MP3');
+  C1 = createAudio('assets/C1.MP3');
+  C2 = createAudio('assets/C2.MP3');
+  C3 = createAudio('assets/C3.MP3');
 
 
   rectMode(CENTER);
@@ -210,31 +224,16 @@ function mouseClicked(e) {
       // fill(255,0,0)
       ford.echoIsActivated = true;
 
-      // if (mouseIsPressed) {
-      //   this.brightness=255;
-      //   hue += 0.1;
-      //   if (hue > 255) hue = 0;
-      //   ford.brightness = 1+frameCount;
-      // }
-      // if (d < ford.realR) {
-      //   hue += 0.1;
-      //   if (hue > 255) hue = 0;
-      //   ford.brightness = 1+frameCount;
-      // }
 
-      // console.log(ford.rEcho);
-      // console.log(ford.realR, ford.rEcho);
+
 
       if(ford.realR >100 && ford.realR <250) {          //biggest
         if (!sampleIsLooping) {
-          //loop our sound element until we
-          //call ele.stop() on it.
-          A1.loop();
-          A1.speed(2)
-      
+          A2.loop();
+          A2.speed(2)
           sampleIsLooping = true;
         } else {
-          A1.stop();
+          A2.stop();
           sampleIsLooping = false;
         }
 
@@ -247,45 +246,73 @@ function mouseClicked(e) {
 
 
       if(ford.realR >60 && ford.realR <100) {
-        // Tone.loaded().then(() => {
-        //   sampler.triggerAttackRelease(["E#2"], 4);
-        //   sampler.triggerAttackRelease(["E#2"], 4,n+2); ///TATATATA
-        // })
-
         if (!sampleIsLooping) {
+          A1.loop();
+          A1.speed(2)
+          sampleIsLooping = true;
+        } else {
+          A1.stop();
+          sampleIsLooping = false;
+        }
 
-        B1.loop();
-        B1.speed(2)
-
-      
-        sampleIsLooping = true;
-      } else {
-        B1.stop();
-        sampleIsLooping = false;
-      }
+        ford.brightness = 255;
       }
 
       if(ford.realR >60 && ford.realR <100&& activeBubble==true) {          //biggest
+        ford.brightness = 0;
       }
 
 
 
       if(ford.realR >40 && ford.realR <60) {
-        Tone.loaded().then(() => {
-          sampler.triggerAttackRelease(["A2"], 4);
+        if (!sampleIsLooping) {
+          B2.loop();
+          B2.speed(2)
+          sampleIsLooping = true;
+        } else {
+          B2.stop();
+          sampleIsLooping = false;
+        }
 
-        })
+        ford.brightness = 255;
+      } 
+
+      if(ford.realR >40 && ford.realR <60&& activeBubble==true) {          //biggest
+        ford.brightness = 0;
       }
+
+
       if(ford.realR >20 && ford.realR <40) {
-        Tone.loaded().then(() => {
-          sampler.triggerAttackRelease(["A3"], 4);
-        })
+        ford.brightness = 255;
+
+        if (!sampleIsLooping) {
+
+        B3.loop();
+        B3.speed(2)
+
+      
+        sampleIsLooping = true;
+      } else {
+        B3.stop();
+        sampleIsLooping = false;
+      }
+      }
+
+      if(ford.realR >20 && ford.realR <40 && activeBubble==true) {          //biggest
+        ford.brightness = 0;
       }
 
       if(ford.realR >10 && ford.realR <20) {
-        Tone.loaded().then(() => {
-          sampler.triggerAttackRelease(["A4"], 4);
-        })
+        if (!sampleIsLooping) {
+          C2.loop();
+          C2.speed(2)
+          sampleIsLooping = true;
+        } else {
+          C2.stop();
+          sampleIsLooping = false;
+        }
+
+        ford.brightness = 255;
       }
       if(ford.realR <10) {
         Tone.loaded().then(() => {
@@ -309,9 +336,16 @@ function mouseClicked(e) {
 
 
       if(ford.realR >100 && ford.realR <250 && mouseButton === RIGHT) {         //biggest
-        Tone.loaded().then(() => {
-          sampler.triggerAttackRelease(["A4"], 4);
-        })
+        if (!sampleIsLooping) {
+          C3.loop();
+          C3.speed(2)
+          sampleIsLooping = true;
+        } else {
+          C3.stop();
+          sampleIsLooping = false;
+        }
+
+        ford.brightness = 255;
       }
     
 

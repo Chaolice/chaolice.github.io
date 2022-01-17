@@ -30,9 +30,15 @@
 
   //a player with an envelope
 let sampler = new Tone.Sampler({
-  "C4": "assets/A1.mp3",
-    "D#4": "assets/B1.mp3",
-      "F#4": "assets/C1.mp3",
+  "A1": "assets/A1.mp3",
+  "A2": "assets/A2.mp3",
+  "A3": "assets/A3.mp3",
+  "B2": "assets/B2.mp3",
+  "B3": "assets/B3.mp3",
+  "B1": "assets/B1.mp3",
+  "C1": "assets/C1.mp3",
+  "C2": "assets/C2.mp3",
+  "C3": "assets/C3.mp3",
 });
 sampler.toMaster();
 
