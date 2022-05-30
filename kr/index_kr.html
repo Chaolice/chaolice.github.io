@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Oops! | Mélanie Martin</title>
+  <link rel="stylesheet" href="../hover.css">
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link href="../img/Mel_icon.ico" rel="icon" type="image/x-icon" />
+</head>
+<body>
+  <!-- You're going that far to see my body?! That's scandalous-->
+
+  <ul>
+    <li><a href="../fr/index_fr.html"><button id="french">Français</button></a></li>
+    <li><a href="index_kr.html"><button class="activebutton">한글</button></a></li>
+    <li><a href="../index.html"><button id="english">English</button></a></li>
+  </ul>
+
+  <div id="container" class="center">
+	   <div id="panel">
+		     <div id="panel-container">
+    			    <div class="panel-content">
+                <content>
+                <h1>창피해요...</h1>
+                <p>아직 준비되지 않았습니다.<br>곧 돌아오세요!</p>
+                <br>
+                <p id="companionMethods"></p>
+              </content>
+    			    </div>
+    		</div>
+	   </div>
+  </div>
+  <footer>
+    <i class="fab fa-linkedin-in"></i>
+    <a href="mailto:martinmelanie@protonmail.ch" class="hvr-bubble-float-bottom bubble">martinmelanie@protonmail.ch</a>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+  <script>
+  // CARD HOVER //
+  let myPanel = document.getElementById("panel");
+  let subpanel = document.getElementById("panel-container");
+
+  myPanel.onmousemove = transformPanel;
+  myPanel.onmouseenter = handleMouseEnter;
+  myPanel.onmouseleave = handleMouseLeave;
+
+  let mouseX, mouseY;
+
+  let transformAmount = 5;
+
+  function transformPanel(mouseEvent) {
+      mouseX = mouseEvent.pageX;
+      mouseY = mouseEvent.pageY;
+
+      const centerX = myPanel.offsetLeft + myPanel.clientWidth / 2;
+      const centerY = myPanel.offsetTop + myPanel.clientHeight / 2;
+
+      const percentX = (mouseX - centerX) / (myPanel.clientWidth / 2);
+      const percentY = -((mouseY - centerY) / (myPanel.clientHeight / 2));
+
+      subpanel.style.transform = "perspective(400px) rotateY(" + percentX * transformAmount + "deg) rotateX(" + percentY * transformAmount + "deg)";
+  }
+
+  function handleMouseEnter() {
+      setTimeout(() => {
+          subpanel.style.transition = "";
+      }, 100);
+      subpanel.style.transition = "transform 0.1s";
+  }
+
+  function handleMouseLeave() {
+      subpanel.style.transition = "transform 0.1s";
+      setTimeout(() => {
+          subpanel.style.transition = "";
+      }, 100);
+
+      subpanel.style.transform = "perspective(400px) rotateY(0deg) rotateX(0deg)";
+  }
+  </script>
+</body>
+</html>
