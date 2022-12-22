@@ -6,6 +6,10 @@
   font-style: normal;
 }
 
+body {
+  background-color: transparent !important;
+}
+
 tw-passage {
   text-align: center;
   font-family: "w95faregular";
@@ -30,6 +34,7 @@ tw-story {
   padding: 0 !important;
   height: 100vh;
   width: 100vh;
+  background-color: transparent !important;
 }
 
 tw-sidebar {
