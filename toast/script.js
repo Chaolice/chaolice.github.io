@@ -1,5 +1,21 @@
 "use strict";
 
+//menu
+$(document).ready(function () {
+  $(".menu-burger").click(function () {
+    $(".menu-bg, .menu-items").toggleClass("fs");
+  });
+});
+
+let buttonPressed = false;
+
+document.querySelector(".glove").addEventListener("click", (e) => {
+  if (!buttonPressed) {
+    buttonPressed = true;
+    document.querySelector(".glove").style.animationPlayState = "paused";
+  }
+});
+
 //sticky
 // When the user scrolls down 50px from the top of the document, resize the header's font size
 // window.onscroll = function () {
@@ -144,6 +160,11 @@ allCards.forEach(function (el) {
       }
     }
 
+    // setTimeout(
+    //   three.classList.remove("userCorrect", "userWrong", "restart"),
+    //   10000000
+    // );
+
     tinderContainer.classList.remove("tinder_love");
     tinderContainer.classList.remove("tinder_nope");
 
@@ -180,6 +201,12 @@ allCards.forEach(function (el) {
 });
 
 function createButtonListener(love) {
+  let swipedRight;
+  if (tinderContainer.classList.contains("tinder_love")) {
+    swipedRight = true;
+  } else {
+    swipedRight = false;
+  }
   return function (event) {
     var cards = document.querySelectorAll(".tinder--card:not(.removed)");
     var moveOutWidth = document.body.clientWidth * 1.5;
@@ -193,9 +220,27 @@ function createButtonListener(love) {
     if (love) {
       card.style.transform =
         "translate(" + moveOutWidth + "px, -100px) rotate(-30deg)";
+      if (swipedRight == true) {
+        console.log("user is correct");
+        three.classList.remove("userCorrect", "userWrong", "restart");
+        three.classList.add("userCorrect", "restart");
+      } else {
+        console.log("user is wrong");
+        three.classList.remove("userCorrect", "userWrong", "restart");
+        three.classList.add("userWrong", "restart");
+      }
     } else {
       card.style.transform =
         "translate(-" + moveOutWidth + "px, -100px) rotate(30deg)";
+      if (swipedRight == false) {
+        console.log("user is correct");
+        three.classList.remove("userCorrect", "userWrong", "restart");
+        three.classList.add("userCorrect", "restart");
+      } else {
+        console.log("user is wrong");
+        three.classList.remove("userCorrect", "userWrong", "restart");
+        three.classList.add("userWrong", "restart");
+      }
     }
 
     initCards();
@@ -210,25 +255,39 @@ var loveListener = createButtonListener(true);
 nope.addEventListener("click", nopeListener);
 love.addEventListener("click", loveListener);
 
+//rest
+
 let currentImgIndex = 0;
 let currentTextIndex = 0;
 let imgArray = [
-  "assets/00bowl.png",
-  "assets/00butter.png",
-  "assets/00toast.png",
-  "assets/00toast.png",
-  "assets/00toast.png",
+  "assets/smalltoast.png",
+  "assets/smallmilk.png",
+  "assets/smallbutter.png",
+  "assets/smallsugar.png",
+  "assets/transparent.png",
+];
+let couponArray = [
+  "assets/coupon02.png",
+  "assets/coupon03.png",
+  "assets/coupon04.png",
+  "assets/coupon05.png",
+  "assets/transparent.png",
 ];
 function changeImage() {
   var img = document.getElementById("sticker");
   img.src = imgArray[currentImgIndex];
   var h4 = document.getElementById("stickerCount");
   h4.innerText = currentImgIndex + 1 + 1;
+  var coupon = document.getElementById("coupon");
+
+  coupon.src = couponArray[currentImgIndex];
+
   currentImgIndex++;
+
   if (currentImgIndex >= imgArray.length) {
     // currentImgIndex = 0;
     currentImgIndex = 4;
-    h4.innerText = "Done";
+    h4.innerText = "☺";
   }
 }
 
@@ -236,6 +295,8 @@ function help() {
   var q = document.getElementById("ingredientList");
   const node = document.createElement("div");
   const readyNode = document.createElement("div");
+  var glove = document.getElementById("centeredGlove");
+  // glove.style.display = none;
 
   node.classList.add("option");
   readyNode.classList.add("ready");
@@ -252,10 +313,15 @@ function help() {
   readyNode.innerHTML = "<p>hulo</p>";
   q.appendChild(node);
   currentTextIndex++;
+  if (currentTextIndex >= a.length) {
+    document.getElementById("ready").innerHTML = "Ready to cook!";
+  }
   if (currentTextIndex >= a.length + 1) {
     currentTextIndex = 6;
     node.innerHTML = '<div class="ingredientName"></div>';
-    document.getElementById("ready").innerHTML = "Ready to cook!";
+  }
+  if (document.getElementById("ready").innerHTML == "Ready to cook!") {
+    document.querySelector(".glove").style.display = "none";
   }
 }
 
@@ -398,7 +464,7 @@ function addSticker(event) {
     sticker.style.transform = `translate(${x}px, ${y}px) rotate(${rotation})`;
     sticker.style.zIndex = ++zIndex;
   };
-  document.querySelector(".six").appendChild(sticker);
+  document.querySelector(".allStickers").appendChild(sticker);
 }
 
 //sticker ting
