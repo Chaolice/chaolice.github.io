@@ -1,0 +1,197 @@
+@font-face {
+  font-family: "w95faregular";
+  src: url("w95fa-webfont.woff2") format("woff2"),
+    url("w95fa-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "scrambled_eggs_boldregular";
+  src: url("scrambled_eggs_bold-webfont.woff2") format("woff2"),
+    url("scrambled_eggs_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "scrambled_eggsregular";
+  src: url("scrambled_eggs-webfont.woff2") format("woff2"),
+    url("scrambled_eggs-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "gaiacondensed";
+  src: url("gaia-webfont.woff2") format("woff2"),
+    url("gaia-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "vp_pixelsimplified_demo";
+  src: url("vppixel-simplified-webfont.woff2") format("woff2"),
+    url("vppixel-simplified-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #ffd5e3;
+}
+
+.test {
+  background-color: #ffd5e3;
+}
+
+tw-passage {
+  text-align: center;
+  font-family: "gaiacondensed";
+  color: white;
+  /*Typing animation*/
+  /* animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  overflow: hidden;
+  white-space: nowrap !important;
+  margin: 0 auto;
+
+ */
+  letter-spacing: 0.15em;
+
+  /* text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #34ccff,
+    0 0 82px #34ccff, 0 0 92px #34ccff, 0 0 102px #34ccff, 0 0 151px #34ccff; */
+  word-wrap: normal !important;
+  /* display: flex !important; */
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 20vh;
+}
+
+tw-story {
+  padding: 0 !important;
+  height: 100vh;
+  width: 100vh;
+  background-color: transparent !important;
+}
+
+tw-sidebar {
+  display: none !important;
+}
+
+br {
+  display: none;
+}
+
+tw-link,
+.enchantment-link {
+  color: white !important;
+  display: block;
+}
+
+
+tw-link {
+  font-family: "scrambled_eggs_boldregular";
+}
+
+tw-link:hover {
+  color: red !important;
+}
+
+tw-icon[alt] {
+  opacity: 1;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: orange;
+  }
+}
+
+/* blink for clock*/
+.blink {
+  width: 220px;
+  height: 50px;
+  background-color: #342ab8;
+  padding: 10px;
+  text-align: center;
+  line-height: 50px;
+}
+
+span {
+  font-size: 26px;
+  font-family: cursive;
+  color: #fff;
+  animation: blink 2s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  2% {
+    opacity: .5;
+  }
+
+  10% {
+    opacity: .5;
+  }
+
+  15% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  65% {
+    opacity: 0;
+  }
+
+  67% {
+    opacity: .5;
+  }
+
+  75% {
+    opacity: .5
+  }
+
+  77% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#bg-fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 9999;
+  opacity: 0;
+}
