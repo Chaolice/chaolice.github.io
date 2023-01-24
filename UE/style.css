@@ -39,8 +39,9 @@
 }
 
 body {
-  background-color: #000000;
+  background-color: black;
   /* background-color: #ffd5e3; */
+
 
 }
 
@@ -51,7 +52,7 @@ body {
 tw-passage {
   text-align: center;
   font-family: "gaiacondensed";
-  color: green;
+  color: White;
   /* color: white; */
 
   /*Typing animation*/
