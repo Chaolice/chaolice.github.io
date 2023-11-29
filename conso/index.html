@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Rubik Mono One' rel='stylesheet'>
+    <link  type="text/css" rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+    
+
+</head>
+<body>
+  <div class="stepone">
+    <ul class="cards">
+        <li class="card">
+        <p>Le consommateur est une figure inoffensive.</p>
+      </li>
+        <li class="card">
+          <p>Ce que la technologie ne peut pas faire il appartient aux individus de le réaliser. Mais en ont-ils réellement les moyens? L'action individuelle est-elle de même portée que la modifiication des infrastructures, des marchés, des normes ou des techniques?</p>
+        </li>
+        <li class="card">      
+          <p>Dans la lutte jsp jsp</p>
+      
+        </li>
+        <li class="card">      
+          <p>Donec nunc igula.</p>
+      
+        </li>
+      </ul>
+      <h3 class="counter">1/4</h3>
+    </div>
+    <div class="steptwo">
+      <div class="infos">Avec votre aide, nous pouvons
+        centraliser l’attention <br>des grandes
+        entreprises sur leur responsabilités!</div>
+      <div class="form-container" id="containerForm">
+        <form onsubmit="hideForm()">
+            <div class="rowForm">
+          <div class="col-25">
+            <label for="fname">Prénom</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="firstname">
+          </div>
+        </div>
+        <div class="rowForm">
+          <div class="col-25">
+            <label for="lname">Nom</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="lname" name="lastname">
+          </div>
+        </div>
+        <div class="rowForm">
+          <div class="col-25">
+            <label for="subject">Lettre</label>
+          </div>
+          <div class="col-75">
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px">Monsieur le conseiller,
+Madame la conseillère,
+                
+Le gouvernement est actuellement à la tête du pouvoir nécessaire pour influencer les pratiques des entreprises et protéger la santé publique. Je m'adresse à vous aujourd'hui pour attirer votre attention sur des préoccupations cruciales liées aux pratiques corporatives qui menacent notre bien-être collectif.
+                
+Il est de la plus haute importance que des mesures soient prises pour mettre fin à la contamination de nos vies par des substances toxiques provenant d'entreprises peu scrupuleuses. De plus, nous devons mettre un terme à l'utilisation de travailleurs assujettis à des conditions assimilables à de l'esclavage. Il est inacceptable que des corporations profitent de la souffrance humaine pour maximiser leurs gains.
+                
+De même, nous devons agir contre le gaspillage alimentaire et la destruction de denrées encore consommables. Le gaspillage alimentaire est une tragédie à la fois morale et environnementale, exacerbée par des pratiques irresponsables des entreprises. Il est impératif que des mesures soient prises pour mettre fin à cette pratique néfaste.
+                
+En tant que représentant.e.s du peuple, vous avez le pouvoir de plaider en faveur de changements significatifs dans les politiques gouvernementales qui régissent les activités des entreprises. Nous vous exhortons à user de votre influence pour instaurer des règlements plus stricts et des sanctions dissuasives afin de forcer les entreprises à respecter des normes éthiques élevées.
+                
+Nous comptons sur vous pour défendre notre droit fondamental à vivre dans un environnement sain, sans être exposés à des produits nocifs, sans que des travailleurs soient exploités comme des esclaves, et sans que des ressources précieuses soient gaspillées de manière irresponsable.
+                
+Je vous prie d'agréer, Monsieur le conseiller, Madame la conseillère, l'expression de ma haute considération.
+</textarea>
+          </div>
+        </div>
+        <br>
+        <div class="rowForm">
+          <input type="submit" value="Envoyer au palais de la confédération" >
+        </div>
+        </form>
+      </div>
+    </div>
+    <div class="stepthree">
+      <div class="formCounter">0000</div>
+      <div class="banner-container" id="banner-container"></div>
+</div>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="module" src="scriptFirebase.js"></script>
+      <script src="script.js"></script>
+
+</body>
+</html>
