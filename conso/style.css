@@ -1,4 +1,8 @@
 /*STEPS*/
+html{
+  overflow-x: hidden;
+
+}
 
 .stepone{
   display: block;
@@ -90,7 +94,7 @@
 
   h1 { margin: 0; }
   html, body {
-    height: 100%;
+    height: 80%;
     /* font-family: 'Rubik Mono One'; */
     font-size: 22px;
     font-family: "Times New Roman", Times, serif;
