@@ -459,10 +459,10 @@ a:active{
     padding-top: 12rem;}
 
 .photoGallery img {
-    flex: 1 1 200px; /* Flex grow, flex shrink, and base width */
+    flex: 1 1 120px; /* Flex grow, flex shrink, and base width */
     max-width: 100%; /* Ensures image is not bigger than its container */
     height: auto; /* Keeps the aspect ratio of the image */
-    object-fit: cover; /* Adjusts how the content of the replaced element should be resized */
+    object-fit: initial; /* Adjusts how the content of the replaced element should be resized */
 }
 
 .photoGallery img:nth-child(1) { order: 1; } /* PHOTO3.jpg */
@@ -478,8 +478,6 @@ a:active{
 /* Large screens */
 @media (min-width: 992px) {
   .photoGallery img {
-    flex: 1 1 200px; /* Flex grow, flex shrink, and base width */
-    max-width: 100%; /* Ensures image is not bigger than its container */
     height: 80%; /* Keeps the aspect ratio of the image */
     object-fit: initial; /* Adjusts how the content of the replaced element should be resized */
 }
@@ -503,7 +501,7 @@ font-size: 1.8rem;
 }
 
 .photoGallery{
-  padding:5rem;
+  padding:2rem;
 
 }
 .fa-download{
