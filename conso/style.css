@@ -515,9 +515,7 @@ padding:2rem;}
 }
 
 @media (max-width: 700px) {
-    .gallery-image {
-        width: 100%; /* Single column on the smallest screens */
-    }
+
 
     .photoGallery img:nth-child(1) { order: 1; } /* PHOTO3.jpg */
     .photoGallery img:nth-child(2) { order: 2; } /* PHOTO4.jpg */
@@ -560,3 +558,19 @@ padding:2rem;}
     }
   }
 
+
+  @media (max-width: 400px) {
+    .intro{
+      font-size: 1.5rem;
+    }
+    .photoGallery {
+    }
+  
+  .photoGallery img {
+  max-width: 50%;  
+}
+.gallery-image {
+  max-width: 200px; /* Optional: Set a maximum width for larger screens */
+width: 70px;
+}
+  }
