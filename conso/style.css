@@ -573,4 +573,11 @@ padding:2rem;}
   max-width: 200px; /* Optional: Set a maximum width for larger screens */
 width: 70px;
 }
+.burger-nav ul li a {
+  display: block;
+  padding: 3vh 22px;
   }
+.printSection{
+  font-size: 34px;
+}
+}
