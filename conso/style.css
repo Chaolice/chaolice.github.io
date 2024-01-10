@@ -456,7 +456,7 @@ a:active{
     gap: 10px; /* Space between images */
     padding-left: 30rem;
     padding-right: 30rem;
-    padding-top: 12rem;}
+    padding-top: 8vh;}
 
 .photoGallery img {
     flex: 1 1 120px; /* Flex grow, flex shrink, and base width */
@@ -559,11 +559,12 @@ padding:2rem;}
   }
 
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     .intro{
       font-size: 1.5rem;
     }
     .photoGallery {
+      padding-top: 6vh;
     }
   
   .photoGallery img {
