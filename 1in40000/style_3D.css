@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+.box {
+  positon: absolute;
+  width: 1000px;
+  height: 1000px;
+  margin: 10% auto ;
+  background: #E27C46;
+  transition: .5s;
+  transform: skewY(-10deg);
+  box-sizing: border-box;
+  margin-right: 310px;
+}
+.box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100rem;
+  width: 100rem;
+  height: 1000%;
+  background: #D1703F;
+  transform-origin: right bottom;
+  transform: skewY(45deg);
+}
+.box::after {
+  content: '';
+  position: absolute;
+  top: -40rem;
+  left: 0;
+  width: 100%;
+  height: 40rem;
+  transform-origin: bottom left;
+  transform: skewX(45deg);
+  background-color: #C16338;
+}
+.box h3 {
+  z-index: 5;
+  position: relative;
+  color: #E27C46;
+  text-align: center;
+  margin: 40px 0 0;
+  padding: 8px 0;
+  font-size: 36px;
+  text-transform: uppercase;
+}
+.box h3:before{
+  content:'';
+  position:absolute;
+  top: 0;
+  left: -40rem;
+  width: 40rem;
+  height:100%;
+  transform-origin: top right;
+  transform: skewY(45deg);
+}
+
+.disclaimer {
+  display: none;
+}
+
+/*Tablet*/
+@media(min-width: 1px) and (max-width: 1388px) {
+  .box {
+    positon: absolute;
+    width: 10rem;
+    height: 10rem;
+    margin: 10rem auto ;
+    background: #E27C46;
+    transition: .5s;
+    transform: skewY(-10deg);
+    box-sizing: border-box;
+    margin-right: none;
+  }
+  .box::before {
+    left: -5rem;
+    width: 5rem;
+    height: 100%;
+  }
+  .box::after {
+    top: -5rem;
+    width: 100%;
+    height: 5rem;
+  }
+  .box h3:before{
+    left: -10rem;
+    width: 10rem;
+    height:100%;
+  }
+.disclaimer {
+  display: block;
+}
+.container {
+  display: none;
+}
+
+.outerContainer{
+  overflow: hidden;
+}
+
+.box p {
+  padding: 20px 20px;
+  color: #262222;
+  text-align: center;
+  font-size: 1rem;
+}
